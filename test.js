@@ -293,24 +293,24 @@ document.addEventListener("DOMContentLoaded", () => {
     displayArgumentTable(argument) {
       this.questionDisplay.innerHTML = `
         <h2>${argument.statement}</h2>
-        <table border="1" style="width: 100%; text-align: left;">
-          <thead>
-            <tr>
-              <th>For</th>
-              <th>Against</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>${Object.values(argument.For)
+        <div class="pros-cons-container">
+          <div class="pros">
+            <h3>For</h3>
+            <ul>
+              ${Object.values(argument.For)
                 .map((f) => `<li>${f}</li>`)
-                .join("")}</td>
-              <td>${Object.values(argument.Against)
+                .join("")}
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>Against</h3>
+            <ul>
+              ${Object.values(argument.Against)
                 .map((a) => `<li>${a}</li>`)
-                .join("")}</td>
-            </tr>
-          </tbody>
-        </table>
+                .join("")}
+            </ul>
+          </div>
+        </div>
       `;
     }
 
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Add a click event to the button to navigate to the home page or any other desired page
       endButton.addEventListener("click", () => {
-        window.location.href = "multilevel-test.html"; // or the desired page link
+        window.location.href = "mocks.html";
       });
     }
   }
